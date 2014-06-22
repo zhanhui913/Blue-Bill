@@ -6,10 +6,11 @@
  * Licensed under the MIT license.
  */
 
-(function($ , undefined) {
+//define(['require','jquery'],function(require) {
+(function($ , undefined) {//ACE
 
-	//var $ = require('jquery');
-
+	//var $   = require('jquery');
+	var old = $.fn.spinner;
 
 	// SPINNER CONSTRUCTOR AND PROTOTYPE
 
@@ -55,8 +56,15 @@
 		constructor: Spinner,
 
 		render: function () {
-			this.$input.val(this.options.value);
-			this.$input.attr('maxlength',(this.options.max + '').split('').length);
+			var inputValue = this.$input.val();
+
+			if (inputValue) {
+				this.value(inputValue);
+			} else {
+				this.$input.val(this.options.value);
+			}
+
+			this.$input.attr('maxlength', (this.options.max + '').split('').length);
 		},
 
 		change: function () {
@@ -65,7 +73,7 @@
 			if(newVal/1){
 				this.options.value = newVal/1;
 			}else{
-				newVal = newVal.replace(/[^0-9]/g,'');
+				newVal = newVal.replace(/[^0-9]/g,'') || '';
 				this.$input.val(newVal);
 				this.options.value = newVal/1;
 			}
@@ -74,9 +82,11 @@
 		},
 
 		stopSpin: function () {
-			clearTimeout(this.switches.timeout);
-			this.switches.count = 1;
-			this.triggerChangedEvent();
+            if(this.switches.timeout!==undefined){
+                clearTimeout(this.switches.timeout);
+                this.switches.count = 1;
+                this.triggerChangedEvent();
+            }
 		},
 
 		triggerChangedEvent: function () {
@@ -121,15 +131,25 @@
 		step: function (dir) {
 			var curValue = this.options.value;
 			var limValue = dir ? this.options.max : this.options.min;
+			var digits, multiple;
 
 			if ((dir ? curValue < limValue : curValue > limValue)) {
 				var newVal = curValue + (dir ? 1 : -1) * this.options.step;
+
+				if(this.options.step % 1 !== 0){
+					digits = (this.options.step + '').split('.')[1].length;
+					multiple = Math.pow(10, digits);
+					newVal = Math.round(newVal * multiple) / multiple;
+				}
 
 				if (dir ? newVal > limValue : newVal < limValue) {
 					this.value(limValue);
 				} else {
 					this.value(newVal);
 				}
+			} else if (this.options.cycle) {
+				var cycleVal = dir ? this.options.min : this.options.max;
+				this.value(cycleVal);
 			}
 		},
 
@@ -160,19 +180,20 @@
 
 	// SPINNER PLUGIN DEFINITION
 
-	$.fn.spinner = function (option,value) {
+	$.fn.spinner = function (option) {
+		var args = Array.prototype.slice.call( arguments, 1 );
 		var methodReturn;
 
 		var $set = this.each(function () {
-			var $this = $(this);
-			var data = $this.data('spinner');
+			var $this   = $( this );
+			var data    = $this.data( 'spinner' );
 			var options = typeof option === 'object' && option;
 
-			if (!data) $this.data('spinner', (data = new Spinner(this, options)));
-			if (typeof option === 'string') methodReturn = data[option](value);
+			if( !data ) $this.data('spinner', (data = new Spinner( this, options ) ) );
+			if( typeof option === 'string' ) methodReturn = data[ option ].apply( data, args );
 		});
 
-		return (methodReturn === undefined) ? $set : methodReturn;
+		return ( methodReturn === undefined ) ? $set : methodReturn;
 	};
 
 	$.fn.spinner.defaults = {
@@ -187,15 +208,20 @@
 
 	$.fn.spinner.Constructor = Spinner;
 
+	$.fn.spinner.noConflict = function () {
+		$.fn.spinner = old;
+		return this;
+	};
+
 
 	// SPINNER DATA-API
 
 	$(function () {
-		$('body').on('mousedown.spinner.data-api', '.spinner', function (e) {
+		$('body').on('mousedown.spinner.data-api', '.spinner', function () {
 			var $this = $(this);
 			if ($this.data('spinner')) return;
 			$this.spinner($this.data());
 		});
 	});
-
-})(window.jQuery);
+//});
+})(window.jQuery);//ACE

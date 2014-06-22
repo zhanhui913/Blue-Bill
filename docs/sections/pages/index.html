@@ -1,0 +1,370 @@
+
+<section id="pages">
+  <div class="page-header">
+	<h1><i class="ace-icon fa fa-files-o blue"></i> Pages</h1>
+  </div>
+
+          <h2 class="header blue lighter">Dashboard Elements</h2>
+		  <h4 class="grey">Info and Stats</h4>
+		  
+		  	<div class="bs-docs-example" data-text="Infobox Example">
+<pre class="prettyprint linenums">
+&lt;div class="infobox infobox-green"&gt;
+	&lt;div class="infobox-icon"&gt;&lt;i class="ace-icon fa fa-comments"&gt;&lt;/i&gt;&lt;/div&gt;
+	&lt;div class="infobox-data"&gt;
+		&lt;span class="infobox-data-number"&gt;32&lt;/span&gt;
+		&lt;span class="infobox-content"&gt;comments + 2 reviews&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div class="stat stat-success"&gt;8%&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+
+
+    <div class="infobox infobox-green">
+		<div class="infobox-icon"><i class="ace-icon fa fa-comments"></i></div>
+		<div class="infobox-data">
+			<span class="infobox-data-number">32</span>
+			<span class="infobox-content">comments + 2 reviews</span>
+		</div>
+		<div class="stat stat-success">8%</div>
+    </div>
+	
+	<div class="infobox infobox-blue infobox-dark">
+		<div class="infobox-icon"><i class="ace-icon fa fa-comments"></i></div>
+		<div class="infobox-data">
+			<span class="infobox-data-number">32</span>
+			<span class="infobox-content">comments + 2 reviews</span>
+		</div>
+		<div class="badge badge-success">8% <i class="ace-icon fa fa-arrow-up"></i></div>
+    </div>
+</div>
+			
+			<p>
+				It can have the following color classes: (Please see <code>assets/css/less/infobox.less</code>)
+				<ul class="inline">
+					<li><code>.infobox-green</code></li>
+					<li><code>.infobox-green2</code></li>
+					<li><code>.infobox-purple</code></li>
+					<li><code>.infobox-purple2</code></li>
+					<li><code>.infobox-pink</code></li>
+					<li><code>.infobox-blue</code></li>
+					<li><code>.infobox-blue2</code></li>
+					<li><code>.infobox-blue3</code></li>
+					<li><code>.infobox-brown</code></li>
+					<li><code>.infobox-wood</code></li>
+					<li><code>.infobox-lightbrown</code></li>
+					<li><code>.infobox-orange</code></li>
+					<li><code>.infobox-orange2</code></li>
+					<li><code>.infobox-grey</code></li>
+					<li><code>.infobox-black</code></li>
+				</ul>
+			</p>
+			<p>
+				You can use <code>.infobox-dark</code> for a darker box and <code>.infobox-small</code> for a smaller box.
+			</p>
+			
+			<p>
+				<code>.infobox-icon</code> <code>.infobox-chart</code> <code>.infobox-progress</code> 
+				containers are for placing icons and charts.
+			</p>
+			
+			<p>
+				<code>.infobox-data-number</code> <code>.infobox-text</code> are for title and <code>.infobox-content</code> is for extra explanation.
+			</p>
+			
+			<p>
+				<code>.stat</code> and <code>.badge</code> is for the small stats and arrows.
+			</p>
+			
+			<div class="space"></div>
+			
+			<div class="well">
+				<span class="label label-important arrowed-right">Note</span>
+				View <code>mustache/app/views/pages/partials/index/infobox.mustache</code> for more info.
+			</div>
+			
+			<div class="hr hr-16"></div>
+			
+			<h4 class="grey">Conversations, Tasks and Members</h4>
+			For more info please check the relevant mustache templates in here:
+			<code>mustache/app/views/pages/partials/index</code>
+
+	
+		<div class="hr hr-double hr-32"></div>
+
+
+		  <h2 class="blue lighter header">Widgets</h2>
+		  		  	<div class="bs-docs-example" data-text="Default Widget Example">
+<pre class="prettyprint linenums">
+&lt;div class="widget-box"&gt;
+
+ &lt;div class="widget-header"&gt;
+   &lt;h5&gt;Default Widget Box&lt;/h5&gt;
+   &lt;div class="widget-toolbar"&gt;
+	  &lt;a data-action="settings" href="#"&gt;&lt;i class="ace-icon fa fa-cog"&gt;&lt;/i&gt;&lt;/a&gt;
+	  &lt;a data-action="reload" href="#"&gt;&lt;i class="ace-icon fa fa-refresh"&gt;&lt;/i&gt;&lt;/a&gt;
+	  &lt;a data-action="collapse" href="#"&gt;&lt;i class="ace-icon fa fa-chevron-up"&gt;&lt;/i&gt;&lt;/a&gt;
+	  &lt;a data-action="close" href="#"&gt;&lt;i class="ace-icon fa fa-times"&gt;&lt;/i&gt;&lt;/a&gt;
+   &lt;/div&gt;
+ &lt;/div&gt;&lt;!--/.widget-header --&gt;
+
+ &lt;div class="widget-body"&gt;
+  &lt;div class="widget-main"&gt;
+  &lt;/div&gt;
+ &lt;/div&gt;&lt;!--/.widget-body --&gt;
+
+&lt;/div&gt;&lt;!--/.widget-box --&gt;
+</pre>
+
+
+			</div>
+		  
+			<code>.widget-header"</code> comes with following classes:
+			<div class="space-2"></div>
+			<div class="well well-sm">
+			<code>.widget-header-small</code> <code>.widget-header-large</code>
+			<code>.widget-header-flat</code>
+			<code>.header-color-blue</code> <code>.header-color-blue2</code> <code>.header-color-blue3</code>
+			<code>.header-color-green</code> <code>.header-color-green2</code> <code>.header-color-green3</code>
+			<code>.header-color-red</code> <code>.header-color-red2</code> <code>.header-color-red3</code>
+			<code>.header-color-orange</code> <code>.header-color-purple</code> <code>.header-color-pink</code>
+			<code>.header-color-dark</code> <code>.header-color-grey</code>
+		    </div>
+		  
+		  
+		  <code>.widget-box</code> can come with following classes:
+		  <div class="space-2"></div>
+		  <div class="well well-sm">
+		   <code>.transparent</code> <code>.light-border</code> <code>.no-border</code>
+		  </div>
+		  
+		  <code>.widget-main</code> can come with following paddings:
+		  <div class="space-2"></div>
+		  <div class="well well-sm">
+			<code>.no-padding</code> <code>.padding-2</code> <code>.padding-4</code> &nbsp; ... &nbsp; <code>.padding-32</code>
+		  </div>
+		   For example when putting a table inside the widget you may want to use <code>.no-padding</code>
+		  
+		  <hr />
+		  <br />
+		   <p>
+			<code>.widget-toolbar</code> example:
+			<div class="bs-docs-example" data-text="Widget Toolbar With Tabs">
+<pre class="prettyprint linenums">
+
+&lt;div class="widget-header header-color-pink"&gt;
+   &lt;h5&gt;With Tabs&lt;/h5&gt;
+   &lt;div class="widget-toolbar no-border"&gt;
+	&lt;ul class="nav nav-tabs"&gt;
+	  &lt;li class="active"&gt;&lt;a href="#tab1" data-toggle="tab"&gt;Tab 1&lt;/a&gt;&lt;/li&gt;
+	  &lt;li&gt;&lt;a href="#tab2" data-toggle="tab"&gt;Tab 2&lt;/a&gt;&lt;/li&gt;
+	  &lt;li&gt;&lt;a href="#tab3" data-toggle="tab"&gt;Tab 3&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+   &lt;/div&gt;
+&lt;/div&gt;&lt;!-- .widget-header --&gt;
+
+</pre>
+			</div>
+		   </p>
+		   
+		<div class="hr hr-32"></div>
+		   
+		<h2 class="blue lighter header">Gallery</h2>
+		 <p>
+			Gallery items can have tags (inside <code>li</code> or <code>a</code>), captions (inside <code>a</code> or stand alone) and a toolbar.
+			<div class="bs-docs-example" data-text="Sample Gallery Item">
+<pre class="prettyprint linenums">
+&lt;ul class="ace-thumbnails"&gt;
+
+&lt;li&gt;
+ &lt;a href="image-1.jpg" title="title" data-rel="gallery1"&gt;
+    &lt;img alt="150" src="thumb-1.jpg" /&gt;
+ &lt;/a&gt;
+ &lt;div class="tags"&gt;
+    &lt;span class="label label-info"&gt;breakfast&lt;/span&gt;
+ &lt;/div&gt;
+ &lt;div class="tools"&gt;
+    &lt;a href="#"&gt;&lt;i class="ace-icon fa fa-link"&gt;&lt;/i&gt;&lt;/a&gt;
+    &lt;a href="#"&gt;&lt;i class="ace-icon fa fa-times"&gt;&lt;/i&gt;&lt;/a&gt;
+ &lt;/div&gt;
+&lt;/li&gt;
+
+
+&lt;li&gt;
+ &lt;a href="image-2.jpg" data-rel="gallery1"&gt;
+   &lt;img alt="150" src="{thumb-2.jpg"&gt;
+   &lt;div class="text"&gt;
+	&lt;div class="inner"&gt;Sample Caption on Hover&lt;/div&gt;
+   &lt;/div&gt;
+ &lt;/a&gt;
+&lt;/li&gt;
+.
+.
+.
+
+&lt;/ul&gt;
+</pre>
+			
+			</div>
+
+		 </p>
+
+		<div class="hr hr-32"></div>
+		 
+		 <h2 class="header lighter blue">Pricing Tables</h2>
+		 <p> Pricing Tables come in two sizes, small and large and are based on widget boxes:
+		 </p>
+		 <div class="bs-docs-example" data-text="Large Pricing Box">
+<pre class="prettyprint linenums">
+&lt;div class="widget-box <b class="bigger-125">pricing-box</b>"&gt;
+&lt;/div&gt;
+</pre>
+		 </div>
+		 
+		 <div class="bs-docs-example" data-text="Small Pricing Box">
+
+
+For more info please check the relevant mustache templates at:
+<code>mustache/app/views/pages/pricing.mustache</code>
+<br />
+<code>mustache/app/views/pages/partials/pricing</code>
+
+
+		 </div>
+		 
+		<div class="hr hr-32"></div>
+		 
+		 <h2 class="header lighter blue">Invoice</h2>
+		 <p>
+			Invoice page also basically consistes of a <code>.widget-box</code>.
+			<br />
+			The following classes are used:
+			<code>.invoice-box</code>  <code>.invoice-info</code> <code>.invoice-info-label</code>
+			<br />
+			<p>
+			For more info please check the relevant mustache at:
+			<br />
+			<code>mustache/app/views/pages/invoice.mustache</code>
+		 </p>
+		 
+		<div class="hr hr-32"></div>
+		 
+		<h2 class="header lighter blue">Login & Register</h2>
+		 <p>
+			It also is based on <code>.widget-box</code> and you can see the following template for more info:
+			<code>mustache/app/views/pages/partials/login</code>
+		 </p>
+	
+
+
+
+		<div class="hr hr-32"></div>
+
+	   <h2 class="header lighter blue">User Profile Page</h2> 
+	   There are 3 profile pages included which mostly use the general elements with some extra additions.
+	   For more info take a look at:<br />
+	   <code>mustache/app/views/pages/partials/profile/style_1.mustache</code>
+	   <p>
+	   <code>mustache/app/views/pages/partials/profile/style_2.mustache</code>
+	   <br />
+	   <code>mustache/app/views/pages/partials/profile/style_3.mustache</code>
+	   <br />
+	   
+	  
+ 	   <p>
+	   The general container for profile has the class name <code>.user-profile</code>
+	   <br />
+	   The profile photo is <code>.profile-picture</code>
+	   <br />
+	   The user info container is <code>.profile-contact-info</code> and when striped it has <code>.profile-user-info-striped</code> as well.
+	   <br />
+	   Each user info row is <code>.profile-info-row</code>, each info name is <code>.profile-info-name</code> and info value is <code>.profile-info-value</code>
+	   <br />
+	   
+	   <p>
+	   The recent profile activity container is <code>.profile-feed</code> and each item is <code>.profile-activity</code> as you can see in:
+	   <code>mustache/app/views/pages/partials/profile/activity.mustache</code>
+	   
+	   <p>
+		In the second profile style, there are also user skills,
+		which are contained by <code>.profile-skills</code> and also the <code>.profile-users</code> container which is the friends section.
+		<p>
+		
+		The third profile style in inside a <code>.tab-content</code> with the extra <code>.profile-edit-tab-content</code> class.
+		
+		<p>
+		Please check the relevant templates at <br />
+		<code>mustache/app/views/pages/partials/profile</code>
+		and LESS file at <code>assets/css/less/page.profile.less</code> for more info.
+		
+		
+		
+		
+		
+		<div class="hr hr-32"></div>
+
+	   <h2 class="header lighter blue">Inbox & Messages</h2> 
+		Please check the relevant templates at <br />
+		<code>mustache/app/views/pages/partials/inbox</code>
+		and LESS file at <code>assets/css/less/page.inbox.less</code> for more info.
+	   
+	  
+ 	   <p>
+	   You can use smaller tabs by removing <code>.tab-size-larger</code> class from the relevant <code>.nav-tabs</code>.
+	   <br />
+	   Or you can remove tabs and use inbox menus like this:
+	   
+	   		 <div class="bs-docs-example" data-text="Inbox menu without tabs">
+<pre class="prettyprint linenums">
+&lt;div class="col-xs-2 inbox-menu"&gt;
+
+ &lt;div class="center"&gt;
+    &lt;a href="#" class="btn btn-sm btn-purple btn-new-mail"&gt;
+       &lt;i class="ace-icon fa fa-envelope"&gt;&lt;/i&gt;
+       Write Mail
+    &lt;/a&gt;
+ &lt;/div&gt;
+
+ &lt;div class="space-6"&gt;&lt;/div&gt;
+ 
+ &lt;div class="inbox-folders responsive"&gt;
+
+  &lt;a href="#" class="align-left btn btn-sm btn-block no-border btn-lighter active"&gt;
+      &lt;i class="ace-icon fa fa-inbox blue bigger-110"&gt;&lt;/i&gt;
+      &lt;span class="bigger-110"&gt;Inbox&lt;/span&gt;
+      &lt;span class="badge badge-primary counter"&gt;2&lt;/span&gt;
+  &lt;/a&gt;
+  
+  &lt;a href="#" class="align-left btn btn-sm btn-block no-border btn-lighter active"&gt;
+      &lt;i class="ace-icon fa fa-inbox blue bigger-110"&gt;&lt;/i&gt;
+      &lt;span class="bigger-110"&gt;Sent&lt;/span&gt;
+      &lt;span class="badge badge-primary counter"&gt;2&lt;/span&gt;
+  &lt;/a&gt;
+
+ &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="col-xs-10"&gt;
+ &lt;!-- messages --&gt;
+&lt;/div&gt;
+</pre>
+
+	 </div>
+
+<hr />
+
+<i class="ace-icon fa fa-hand-o-right blue bigger-120"></i> You can also make inbox messages more compact by adding <code>.message-condensed</code> class to <code>.message-container</code> element.
+
+
+	 
+	 
+		<div class="hr hr-32"></div>
+
+	   <h2 class="header lighter blue">Timeline</h2> 
+		Widget boxes are used for timelines. <br />
+		Default timeline items use <code>.transparent.widget-box</code> elements.
+		<br />
+		Please see <code>mustache/app/views/pages/partials/timeline</code> for more details.
+</section>

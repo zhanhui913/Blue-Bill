@@ -1,7 +1,37 @@
-v1.2
- * Updated to Bootstrap 3.0
-	>> Please note that "bootstrap.css" has been compiled with a gutter width of 24px instead of the default 30px
+v1.3
+ * New:
+    Custom scrollbar plugin
+	Automatic scrollbars for fixed sidebar
+	2 new mobile menu styles
+	1 new mobile navbar style
+	Horizontal Menu
+	Compact sidebar style
+	Option to display submenu on mouse hover	
+	Alternative active menu item style	
+	Date addon for inline editable plugin
+	New white button styles
+	Bootstrap datetime picker plugin
+	LESS skin files
+	In-browser CSS & JS file builder to make your own minimal files	
+	Updated documentation & help
+	On-page help which lets you pick any element and see how it works
+	Bootstrap date-time picker plugin
+   
+ * Enhancements:
+	Enhanced widget box functions and events
+	ASP.net friendly checkboxes and radio buttons
+	Enhanced file input options
+	Custom color picker enhancements
+	Light and blurred background for login page
 
+ * Fixes:
+	Some browser fixes
+
+ * Updates:
+	Updated all plugins to their latest version
+
+
+v1.2
  * Enhancements:
 	Spinner
 		Added option for putting increment and decrement buttons on different sides of text input. See docs
@@ -12,7 +42,7 @@ v1.2
 	A few fixes
 
  * Updates:
-	Bootstrap 3.0.0
+	Bootstrap 3.0.0 >> Please note that "bootstrap.css" has been compiled with a gutter width of 24px instead of the default 30px
 	FullCalendar 1.6.4
 	Select2 3.4.2
 	Bootbox.js 4

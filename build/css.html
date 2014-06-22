@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	<title>CSS builder for Ace admin template</title>
+
+	<link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="files/style.css" rel="stylesheet" />
+	<script>
+	 if( typeof document.createElement("A").download === 'undefined' || !(window.URL || window.webkitURL) ) {
+		alert("Please use a modern browser such as Firefox or Chrome!");
+	 }
+	</script>
+   </head>
+   
+   <body>
+   <div class="navbar-fixed-top">
+		<label>
+			<input type="checkbox" id="id-compress-css" />
+			<strong style="color: #FFF;">Compress (Minify)</strong>
+		</label>
+		&nbsp;
+		<a href="javascript:void(0)" class="btn btn-default" id="btn-build-css">Generate</a>
+		&nbsp;
+		<a href="javascript:void(0)" class="btn btn-info hide" id="btn-launch-modal"  data-toggle="modal" data-target="#modal-save-dialog">
+			<i class="glyphicon glyphicon-save"></i>
+		</a>
+	</div>
+
+
+    <div class="container">
+	    <script>
+		 if(document.location.protocol == 'file:') {
+			document.write('<div class="alert alert-danger">\
+			<strong>Please open this page using <span class="text-info">`http` protocol</span>, i.e. access it via a web server.</strong><br />\
+			Demo pages, documentation & CSS/JS builder pages, load data dynamically using ajax and <b>`file` protocol</b> prevents that due to browser restrictions.\<br />\
+			Also some browsers such as Firefox don\'t load fonts when resource files are inside an upper level directory.\
+			</div>');
+		 }
+		</script>
+	
+		<div class="row">
+			<div class="col-xs-12" id="page-content">
+				<div class="alert alert-info">
+					You can use this custom CSS builder to build a custom CSS file for your application.
+					<p>
+					If you enable a plugin, you still need to include its original CSS in your app if there is one.
+				</div>	
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Output CSS dialog -->
+	<div class="modal fade" id="modal-save-dialog">
+	  <div class="modal-dialog">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h4 class="modal-title text-primary">Save CSS output</h4>
+		  </div>
+
+		  <div class="modal-body">
+			<div id="save-buttons" class="well well-sm">
+				<a href="javascript:void(0)" class="btn btn-info" id="btn-save-css">Save CSS</a>
+				<a href="javascript:void(0)" class="btn btn-warning pull-right hide" id="btn-save-css-extra">**Save Part 2**</a>
+			</div>
+			
+			<div class="hide" id="modal-ie-alert">
+				<div class="alert alert-info">
+					<p>
+						<b class="text-warning"><i class="glyphicon glyphicon-hand-right"></i> Internet Explorer Note:</b>
+						<br />
+						Current CSS selector count exceeds limitations of <strong><em>IE9</em></strong> & below.
+						<code id="id-selector-limit"></code>
+					</p>
+					<p>
+						Therefore the extra part should be saved and included as a separate CSS file.
+					</p>
+					
+					<p>
+						Please save it and use the following IE conditional comment to include it:
+					</p>
+					<p>
+			<pre>&lt;link rel=&quot;stylesheet&quot; href=&quot;path/to/<span class="text-primary">ace<span class="ie-alert-min"></span>.css</span>&quot; /&gt;
+<span class="text-success">&lt;!--[if lte IE 9]&gt;
+ &lt;link rel=&quot;stylesheet&quot; href=&quot;path/to/<span class="text-danger">ace-part2<span class="ie-alert-min"></span>.css</span>&quot; /&gt;
+&lt;![endif]--&gt;</span></pre>
+				</p>
+
+				<p>
+					<i class="glyphicon glyphicon-hand-right"></i> 
+					Read about this IE limitation
+					<a href="http://support.microsoft.com/kb/262161" target="_blank" class="text-info">
+						<b>here</b>
+					</a>
+					and
+					<a href="http://blogs.msdn.com/b/ieinternals/archive/2011/05/14/10164546.aspx" target="_blank" class="text-info">
+						<b>here</b>
+					</a>
+				</p>
+
+		     </div>
+			</div>
+		  </div>
+		  
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  </div>
+		</div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal#modal-save-dialog -->
+
+
+
+	<script src="../assets/js/jquery.min.js" type="text/javascript"></script>
+	<script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="lib/less.js" type="text/javascript"></script>
+	<!-- note, added _nocache to less.js -->
+	
+	<script src="files/css-builder.js" type="text/javascript"></script>
+   </body>
+</html>

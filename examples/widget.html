@@ -9,8 +9,10 @@
 		
 		<!-- fonts -->
 		<link rel="stylesheet" href="../assets/css/ace-fonts.css" />
+		
+		
 		<link rel="stylesheet" href="../assets/css/ace.min.css" />
-		<!--[if lte IE 8]>
+		<!--[if lte IE 9]>
 		  <link rel="stylesheet" href="../assets/css/ace-ie.min.css" />
 		<![endif]-->
 	</head>
@@ -31,12 +33,12 @@
 				
 				<div class="widget-box" id="my-widget-box">
 					<div class="widget-header">
-						<h5>Default Widget Box</h5>
+						<h5 class="widget-title">Default Widget Box</h5>
 						<div class="widget-toolbar">
-							<a data-action="settings" href="#"><i class="icon-cog"></i></a>
-							<a data-action="reload" href="#"><i class="icon-refresh"></i></a>
-							<a data-action="collapse" href="#"><i class="icon-chevron-up"></i></a>
-							<a data-action="close" href="#"><i class="icon-remove"></i></a>
+							<a data-action="settings" href="#"><i class="ace-icon fa fa-cog"></i></a>
+							<a data-action="reload" href="#"><i class="ace-icon fa fa-refresh"></i></a>
+							<a data-action="collapse" href="#"><i class="ace-icon fa fa-chevron-up"></i></a>
+							<a data-action="close" href="#"><i class="ace-icon fa fa-times"></i></a>
 						</div>
 					</div>
 
@@ -48,7 +50,12 @@
 					 </div>
 					</div>
 				</div>
-				<br />
+				<hr />
+					<a id="id-widget-hide" class="btn btn-link">Hide</a>
+					<a id="id-widget-show" class="btn btn-link">Show</a>
+					<a id="id-widget-close" class="btn btn-link">Close</a>
+					<a id="id-widget-reload" class="btn btn-link">Reload</a>
+				<hr />
 				<textarea id="log-event" style="width:100%; height:300px;"></textarea>
 				
 			</div>
@@ -62,7 +69,7 @@
 		<!-- basic scripts -->
 		<!--[if !IE]> -->
 		<script type="text/javascript">
-		 window.jQuery || document.write("<script src='../assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+		 window.jQuery || document.write("<script src='../assets/js/jquery.min.js'>"+"<"+"/script>");
 		</script>
 		<!-- <![endif]-->
 		<!--[if IE]>
@@ -127,12 +134,32 @@
 						log_event('reloaded.ace.widget called after reloading widget');
 					},
 					
-					'settings.ace.widget' : function(e) {
-						log_event('\nsettings.ace.widget called when settings button is clicked');
+					'setting.ace.widget' : function(e) {
+						log_event('\nsetting.ace.widget called when setting button is clicked');
 					}
 				
 				});
 				
+				$('#id-widget-hide').on('click', function(e) {
+					$('#my-widget-box')
+					.trigger('hide.ace.widget')
+					.widget_box('hide');
+				});
+				$('#id-widget-show').on('click', function(e) {
+					$('#my-widget-box')
+					.trigger('show.ace.widget')
+					.widget_box('show');
+				});
+				$('#id-widget-close').on('click', function(e) {
+					$('#my-widget-box')
+					.trigger('close.ace.widget')
+					.widget_box('close');
+				});
+				$('#id-widget-reload').on('click', function(e) {
+					$('#my-widget-box')
+					.trigger('reload.ace.widget')
+					.widget_box('reload');
+				});
 			});
 		</script>
 
